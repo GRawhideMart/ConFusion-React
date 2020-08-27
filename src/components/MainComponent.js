@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { DISHES } from '../shared/dishes';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './MenuComponent';
 import DishDetail from './DishdetailComponent';
 import Header from './HeaderComponent';
