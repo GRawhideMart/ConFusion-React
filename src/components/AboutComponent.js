@@ -22,7 +22,7 @@ function About(props) {
         return(
             <div key={leader.id} className='col-12 mt-5'>
                 <Media tag='li'>
-                    <RenderLeader leader={leader} />
+                    <RenderLeader leader={leader} /> 
                 </Media>
             </div>
         )
