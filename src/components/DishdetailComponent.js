@@ -1,6 +1,36 @@
-import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import React, { Component } from 'react';
+import { Card, CardImg, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader } from 'reactstrap';
 import { Link } from 'react-router-dom';
+
+class CommentForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isModalOpen: false
+        };
+        this.toggleModal = this.toggleModal.bind(this);
+    }
+
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        })
+    }
+
+    render() {
+        return(
+            <div>
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                    <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
+                </Modal>
+
+                <Button outline onClick={this.toggleModal}>
+                    <span className='fa fa-lg fa-pencil'></span> Submit Comment
+                </Button>
+            </div>
+        );
+    }
+}
 
 function RenderDish({dish}) {
     return(
@@ -13,7 +43,7 @@ function RenderDish({dish}) {
 }
 
 function RenderComments({comments}) {
-    if(comments == []) return(<div></div>)
+    if(comments == []) return(<div><CommentForm /></div>)
     return(
         <div className='col-12 col-md-5 m-1'>
             <h4><strong>Comments</strong></h4>
@@ -24,6 +54,7 @@ function RenderComments({comments}) {
                     </p>)
                 })}
             </ul>
+            <CommentForm />
         </div>
     )
 }
