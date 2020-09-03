@@ -311,6 +311,17 @@
       "message": "So you wanna play with magic?",
       "date": "2020-09-03T14:46:26.114Z",
       "id": 4
+    },
+    {
+      "firstname": "Gino",
+      "lastname": "Minchia",
+      "telnum": "3285183994",
+      "email": "gino@lecca.mi",
+      "agree": false,
+      "contactType": "Tel.",
+      "message": "OMAM(MAMIA!)",
+      "date": "2020-09-03T15:30:18.992Z",
+      "id": 5
     }
   ]
 }
