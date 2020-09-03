@@ -209,6 +209,13 @@
       "comment": "Pasticcino",
       "date": "2020-09-03T09:55:09.371Z",
       "id": 20
+    },
+    {
+      "dishId": 0,
+      "author": "Gigi",
+      "comment": "Meglio che scopare",
+      "date": "2020-09-03T14:44:23.948Z",
+      "id": 21
     }
   ],
   "promotions": [
@@ -293,6 +300,17 @@
       "message": "Can you chase the fire away?",
       "date": "2020-09-03T13:11:19.858Z",
       "id": 3
+    },
+    {
+      "firstname": "Gino",
+      "lastname": "Cretino",
+      "telnum": "3922169392",
+      "email": "gino@cretino.de",
+      "agree": false,
+      "contactType": "Tel.",
+      "message": "So you wanna play with magic?",
+      "date": "2020-09-03T14:46:26.114Z",
+      "id": 4
     }
   ]
 }
