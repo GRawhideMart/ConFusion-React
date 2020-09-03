@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Card, CardImg, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, Row, Label, Col } from 'reactstrap';
+import { Card, CardImg, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, Row, Label, Col, CardBody, CardTitle, CardText } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { LocalForm, Control, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 export class CommentForm extends Component {
     constructor(props) {
@@ -101,9 +102,17 @@ export class CommentForm extends Component {
 function RenderDish({dish}) {
     return(
         <div className='col-12 col-md-5 m-1'>
-            <Card>
-                <CardImg width='100%' src={baseUrl + dish.image} alt={dish.name} />
-            </Card>
+            <FadeTransform in transformProps={{
+                exitTransform: 'scale(0.5) translateY(-50%)'
+            }}>
+                <Card>
+                    <CardImg top src={baseUrl + dish.image} alt={dish.name} />
+                    <CardBody>
+                        <CardTitle>{dish.name}</CardTitle>
+                        <CardText>{dish.description}</CardText>
+                    </CardBody>
+                </Card>
+            </FadeTransform>
         </div>
     );
 }
@@ -114,11 +123,19 @@ function RenderComments({comments, postComment, dishId}) {
         <div className='col-12 col-md-5 m-1'>
             <h4><strong>Comments</strong></h4>
             <ul className='list-unstyled'>
-                {comments.map(eachComment => {
-                    return(<p>{eachComment.comment}<br/>
-                    -- <em>{eachComment.author}</em>, <span>{new Date(eachComment.date).toLocaleDateString()}</span>
-                    </p>)
-                })}
+                <Stagger in>
+                    {comments.map(eachComment => {
+                        return(
+                            <Fade in>
+                                <li key={eachComment.id}>
+                                    <p>{eachComment.comment}<br/>
+                                    -- <em>{eachComment.author}</em>, <span>{new Date(eachComment.date).toLocaleDateString()}</span>
+                                    </p>
+                                </li>
+                            </Fade>
+                        )
+                    })}
+                </Stagger>
             </ul>
             <CommentForm dishId={dishId} postComment={postComment} />
         </div>
