@@ -271,6 +271,28 @@
       "message": "afadsfds",
       "date": "2017-12-04T09:41:49.890Z",
       "id": 1
+    },
+    {
+      "firstname": "Gino",
+      "lastname": "Pasticcion",
+      "telnum": "3204939219",
+      "email": "ginopasticcion@example.org",
+      "agree": false,
+      "contactType": "Tel.",
+      "message": "Oh I miss the comfort of this house where we are",
+      "date": "2020-09-03T13:10:00.739Z",
+      "id": 2
+    },
+    {
+      "firstname": "Otto",
+      "lastname": "Pasticciotto",
+      "telnum": "3291919193",
+      "email": "otto@pasticciot.to",
+      "agree": false,
+      "contactType": "Tel.",
+      "message": "Can you chase the fire away?",
+      "date": "2020-09-03T13:11:19.858Z",
+      "id": 3
     }
   ]
 }
