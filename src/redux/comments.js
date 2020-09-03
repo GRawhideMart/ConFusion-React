@@ -9,8 +9,6 @@ export const Comments = (state = {
     switch(action.type) {
         case Actions.ADD_COMMENT:
             var comment = action.payload;
-            comment.id = state.length // New comment id is the last present + 1. In array terms, this means length (0-indexing)
-            comment.date = new Date().toISOString(); // Date automatically gets assigned to now.
             console.log('Comment: ' + comment);
             return {...state, comments: state.comments.concat(comment)};
 
