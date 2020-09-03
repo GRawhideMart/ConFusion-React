@@ -139,7 +139,7 @@ function RenderComments({comments, postComment, dishId}) {
             </ul>
             <CommentForm dishId={dishId} postComment={postComment} />
         </div>
-    )
+    );
 }
 
 const DishDetail = (props) => {    
